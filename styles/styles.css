@@ -1,35 +1,34 @@
-
-body {        
-    font-family: 'Titillium Web', sans-serif;
-    background-color: #FFFCFA;
-    display: grid;
-    grid-template-rows: auto 1fr auto;
+#bike-ul li img {
+    height: 150px;
+    width: 200px;
 }
-
-main {
-    padding: 30px;
+#bike-ul {
+    display:flex;
+    flex-wrap:wrap;
 }
-
-header {
-    background-color: #A2D7D2;
-    height: 110px;
-    padding: 0 30px;
-    display: flex;
+ul li {
+    list-style-type: none;
+}
+#bike-ul li {
+    border: 3px solid black;
     align-items: center;
-    justify-content: space-between;
-}
-
-header img {
-    height: 100%;
-    object-fit: contain;
-}
-
-h1 {
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-footer {
-    background-color: #FAF0EA;
     padding: 10px;
+    margin: 5px;
+}
+body {
+    background-color: lightskyblue
+}
+#bike-ul li h3 {
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+}
+#bike-ul li span {
+    display: flex;
+    justify-content: center;
+    margin: 2px;
+}
+#bike-ul li button {
+    border-radius: 2px;
+    font-family: arial;
 }

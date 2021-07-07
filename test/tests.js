@@ -1,19 +1,16 @@
-// IMPORT MODULES under test here:
-// import { add } from '../calculator.js';
-
 const test = QUnit.test;
+import { renderBikes } from '../render-dirtbikes.js';
 
-// name your test by what it is testing
-test('time to test a function', (expect) => {
-    //Arrange
-    // Set up your arguments and expectations
-    const expected = true;
-    
-    //Act 
-    // Call the function you're testing and set the result to a const
-    const actual = true; // use your function here
-
-    //Expect
-    // Make assertions about what is expected versus the actual result
-    expect.equal(actual, expected);
+test('should return proper dirtbike', (expect) => {
+    const expected = `<li><h3>Ktm</h3><img src="./assets/Ktm.jpeg" alt="Ktm"><span>2021 ktm 450sxf</span><span>$10,5000</span><button>Buy now</button></li>`;
+    const ktm = {
+        id: 'ktm',
+        name: 'Ktm',
+        image: 'ktm.jpeg',
+        description:'2021 ktm 450sxf',
+        category: 'first-place',
+        price: '10,5000'
+    };
+    const actual = renderBikes (ktm);
+    expect.equal(actual.outerHTML, expected);
 });
