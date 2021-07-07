@@ -4,7 +4,7 @@ const ktm = {
     image: 'ktm.jpeg',
     description:'2021 ktm 450sxf',
     category: 'first-place',
-    price: '10,5000'
+    price: '10,500'
 };
 
 const yamaha = {
