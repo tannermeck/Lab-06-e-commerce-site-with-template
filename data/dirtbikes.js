@@ -1,7 +1,7 @@
 const ktm = {
     id: 1,
     name: 'Ktm',
-    image: 'ktm.jpeg',
+    image: 'Ktm.jpeg',
     description:'2021 ktm 450sxf',
     category: 'first-place',
     price: '10,500'
@@ -10,7 +10,7 @@ const ktm = {
 const yamaha = {
     id: 2,
     name: 'Yamaha',
-    image: 'yamaha.jpeg',
+    image: 'Yamaha.jpeg',
     description: '2021 yz 450f',
     category: 'second-place',
     price: '9,999'
@@ -19,7 +19,7 @@ const yamaha = {
 const honda = {
     id: 3,
     name: 'Honda',
-    image: 'honda.jpeg',
+    image: 'Honda.jpeg',
     description: '2021 crf450r',
     category: 'third-place',
     price: '9,999'
@@ -28,7 +28,7 @@ const honda = {
 const suzuki = {
     id: 4,
     name: 'Suzuki',
-    image: 'suzuki.jpeg',
+    image: 'Suzuki.jpeg',
     description: '2021 rm 450f',
     category: 'fourth-place',
     price: '9,600'
@@ -37,7 +37,7 @@ const suzuki = {
 const kawasaki = {
     id: 5,
     name: 'Kawasaki',
-    image: 'kawasaki.jpeg',
+    image: 'Kawasaki.jpeg',
     description: '2021 kx 450f',
     category: 'fifth-place',
     price: '9,600'
