@@ -4,7 +4,7 @@ export function renderBikes(bike) {
     bikeh3.textContent = bike.name;
 
     const bikeImg = document.createElement('img');
-    bikeImg.src = `./assets/${bike.name}.jpeg`;
+    bikeImg.src = `./assets/${bike.id}.jpeg`;
     bikeImg.alt = bike.name;
 
     const bikeSpan1 = document.createElement('span');
