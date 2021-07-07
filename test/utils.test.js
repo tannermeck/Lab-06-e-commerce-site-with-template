@@ -34,13 +34,13 @@ test('renderLineItems returns a <tr> element', (expect) => {
         image: 'Ktm.jpeg',
         description:'2021 ktm 450sxf',
         category: 'first-place',
-        price: '10,500'
+        price: '10500'
     };
     const ktmCart = {
         id: 1, 
         qty: 2
     };
-    const expected = `<tr><td>Ktm</td><td>10500</td><td>2</td><td>21000</td></tr>`;
+    const expected = `<tr><td>Ktm</td><td>$10500</td><td>2</td><td>$21,000.00</td></tr>`;
     const dom = renderLineItems(ktm, ktmCart);
     const html = dom.outerHTML;
     expect.equal(html, expected);

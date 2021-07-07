@@ -24,15 +24,15 @@ export function renderLineItems(dirtbikeItem, cartItem){
     tdName.textContent = dirtbikeItem.name;
     tr.appendChild(tdName);
 
-    const tdPrice = document.getElementById('td');
-    tdPrice.textContent = toUSD(dirtbikeItem.price);
+    const tdPrice = document.createElement('td');
+    tdPrice.textContent = `$${toUSD(dirtbikeItem.price)}`;
     tr.appendChild(tdPrice);
 
-    const tdQty = document.getElementById('td');
+    const tdQty = document.createElement('td');
     tdQty.textContent = cartItem.qty;
     tr.appendChild(tdQty);
 
-    const tdTotal = document.getElementById('td');
+    const tdTotal = document.createElement('td');
     const total = dirtbikeItem.price * cartItem.qty;
     tdTotal.textContent = toUSD(total);
     tr.appendChild(tdTotal);
