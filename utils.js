@@ -5,3 +5,37 @@ export function findById(items, id){
         }
     }
 }
+export function calcItemTotal(dirtbikes, cart){
+    let orderTotal = 0;
+    for (let item of cart) {
+        const dirtbike = findById(dirtbikes, item.id);
+        orderTotal += dirtbike.price * item.qty;
+    }
+    return orderTotal;
+}
+export function toUSD(number) {
+    return number.toLocaleString(
+        'en-US', { style: 'currency', currency: 'USD' });
+}
+export function renderLineItems(dirtbikeItem, cartItem){
+
+    const tr = document.createElement('tr');
+    const tdName = document.createElement('td');
+    tdName.textContent = dirtbikeItem.name;
+    tr.appendChild(tdName);
+
+    const tdPrice = document.getElementById('td');
+    tdPrice.textContent = toUSD(dirtbikeItem.price);
+    tr.appendChild(tdPrice);
+
+    const tdQty = document.getElementById('td');
+    tdQty.textContent = cartItem.qty;
+    tr.appendChild(tdQty);
+
+    const tdTotal = document.getElementById('td');
+    const total = dirtbikeItem.price * cartItem.qty;
+    tdTotal.textContent = toUSD(total);
+    tr.appendChild(tdTotal);
+    
+    return tr;
+}
