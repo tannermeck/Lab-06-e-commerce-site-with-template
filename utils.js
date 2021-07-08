@@ -48,11 +48,3 @@ export function calcOrderTotal(productArray, cartArray){
     }
     return grandTotal;
 }
-// export function calcItemTotal(dirtbikes, cart){
-//     let orderTotal = 0;
-//     for (let item of cart) {
-//         const dirtbike = findById(dirtbikes, item.id);
-//         orderTotal += dirtbike.price * item.qty;
-//     }
-//     return orderTotal;
-// }
