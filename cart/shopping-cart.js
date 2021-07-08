@@ -4,7 +4,10 @@ import dirtbikes from '../data/dirtbikes.js';
 import { getCart, clearCart } from '../storage-utils.js';
 
 const tBody = document.getElementById('table-body');
-
+const placeOrder = document.getElementById('place-order');
+placeOrder.addEventListener('click', () => {
+    alert('Are you sure you want to purchase?');
+});
 
 function addCartProducts(){
     const cart = getCart();
@@ -12,7 +15,7 @@ function addCartProducts(){
         const bike1 = findById(dirtbikes, item.id);
         const tr = renderLineItems(bike1, item);
         tBody.appendChild(tr);
-}
+    }
     if (cart.length === 0){
         tBody.innerHTML = '';
     }
@@ -26,6 +29,7 @@ const clearButton = document.getElementById('clear');
 clearButton.addEventListener('click', () => {
     clearCart();
     location.reload();
+    location.href = '../index.html';
 });
 
 
