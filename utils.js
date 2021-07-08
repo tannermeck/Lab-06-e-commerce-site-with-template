@@ -5,7 +5,7 @@ export function findById(items, id){
         }
     }
 }
-export function calcItemTotal(dirtbikes, cart){
+export function calcOrderTotal(dirtbikes, cart){
     let orderTotal = 0;
     for (let item of cart) {
         const dirtbike = findById(dirtbikes, item.id);
@@ -39,12 +39,4 @@ export function renderLineItems(dirtbikeItem, cartItem){
     
     return tr;
 }
-export function calcOrderTotal(productArray, cartArray){
-    let grandTotal = 0;
-    for (let eachProduct of cartArray) {
-        const productItem = findById(productArray, eachProduct.id);
-        const itemTotal = calcItemTotal(productItem.price, eachProduct.qty);
-        grandTotal += itemTotal;
-    }
-    return grandTotal;
-}
+
