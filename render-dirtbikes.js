@@ -15,6 +15,8 @@ export function renderBikes(bike) {
 
     const button = document.createElement('button');
     button.textContent = 'Buy now';
+    button.value = bike.id;
+    button.classList.add('add');
 
     bikeLi.appendChild(bikeh3);
     bikeLi.appendChild(bikeImg);
