@@ -6,7 +6,9 @@ export function getCart(){
     const cart = JSON.parse(stringCart) || [];
     return cart;
 }
-
+function setCart(cart){
+    localStorage.setItem(CART, JSON.stringify(cart));
+}
 export function addItemToCart(itemId){
     const cart = getCart();
     const item = findById(cart, itemId);
@@ -21,7 +23,4 @@ export function addItemToCart(itemId){
 }
 export function clearCart(){
     localStorage.removeItem(CART);
-}
-export function setCart(cart){
-    localStorage.setItem(CART, JSON.stringify(cart));
 }
