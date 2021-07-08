@@ -25,7 +25,7 @@ export function renderLineItems(dirtbikeItem, cartItem){
     tr.appendChild(tdName);
 
     const tdPrice = document.createElement('td');
-    tdPrice.textContent = `$${toUSD(dirtbikeItem.price)}`;
+    tdPrice.textContent = toUSD(dirtbikeItem.price);
     tr.appendChild(tdPrice);
 
     const tdQty = document.createElement('td');
@@ -39,3 +39,20 @@ export function renderLineItems(dirtbikeItem, cartItem){
     
     return tr;
 }
+export function calcOrderTotal(productArray, cartArray){
+    let grandTotal = 0;
+    for (let eachProduct of cartArray) {
+        const productItem = findById(productArray, eachProduct.id);
+        const itemTotal = calcItemTotal(productItem.price, eachProduct.qty);
+        grandTotal += itemTotal;
+    }
+    return grandTotal;
+}
+// export function calcItemTotal(dirtbikes, cart){
+//     let orderTotal = 0;
+//     for (let item of cart) {
+//         const dirtbike = findById(dirtbikes, item.id);
+//         orderTotal += dirtbike.price * item.qty;
+//     }
+//     return orderTotal;
+// }

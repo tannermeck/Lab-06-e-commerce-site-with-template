@@ -1,4 +1,4 @@
-import { findById, renderLineItems } from '../utils.js';
+import { findById, renderLineItems, calcOrderTotal } from '../utils.js';
 import { calcItemTotal } from '../utils.js';
 const test = QUnit.test;
 
@@ -34,14 +34,31 @@ test('renderLineItems returns a <tr> element', (expect) => {
         image: 'Ktm.jpeg',
         description:'2021 ktm 450sxf',
         category: 'first-place',
-        price: '10500'
+        price: 10500
     };
     const ktmCart = {
         id: 1, 
         qty: 2
     };
-    const expected = `<tr><td>Ktm</td><td>$10500</td><td>2</td><td>$21,000.00</td></tr>`;
+    const expected = `<tr><td>Ktm</td><td>$10,500.00</td><td>2</td><td>$21,000.00</td></tr>`;
     const dom = renderLineItems(ktm, ktmCart);
     const html = dom.outerHTML;
     expect.equal(html, expected);
+});
+
+test('calcOrderTotal function to return a total amount', (expect) => {
+    const bike1 = [{
+        id: 1,
+        price: 10500,
+        qty: 2
+    }, {
+        id: 5, 
+        price: 9600,
+        qty: 3
+    }];
+    const expected = 49800;
+    const actual = calcOrderTotal(bike1);
+    expect.equal(actual, expected);
+    console.log(actual);
+    
 });
