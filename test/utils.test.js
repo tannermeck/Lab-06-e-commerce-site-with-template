@@ -1,5 +1,5 @@
-import { findById, renderLineItems, calcOrderTotal } from '../utils.js';
-import { calcItemTotal } from '../utils.js';
+import { findById, renderLineItems } from '../utils.js';
+import { calcOrderTotal } from '../utils.js';
 const test = QUnit.test;
 
 test('returns item by ID', (expect) => {
@@ -23,7 +23,7 @@ test('calculates quantity and amount, returning a total', (expect) => {
         price: 4
     }];
     const expected = 32;
-    const actual = calcItemTotal(data, cart);
+    const actual = calcOrderTotal(data, cart);
     expect.equal(actual, expected);
 
 });
@@ -46,19 +46,3 @@ test('renderLineItems returns a <tr> element', (expect) => {
     expect.equal(html, expected);
 });
 
-test('calcOrderTotal function to return a total amount', (expect) => {
-    const bike1 = [{
-        id: 1,
-        price: 10500,
-        qty: 2
-    }, {
-        id: 5, 
-        price: 9600,
-        qty: 3
-    }];
-    const expected = 49800;
-    const actual = calcOrderTotal(bike1);
-    expect.equal(actual, expected);
-    console.log(actual);
-    
-});
