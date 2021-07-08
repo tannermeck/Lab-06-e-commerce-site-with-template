@@ -18,7 +18,7 @@ test('get item from cart and return [ ] if none', (expect) => {
     localStorage.removeItem(CART);
 
     const cart = getCart();
-    const expected = '[]';
+    const expected = [];
     expect.deepEqual(cart, expected);
 });
 
