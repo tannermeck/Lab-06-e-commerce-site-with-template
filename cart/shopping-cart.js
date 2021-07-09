@@ -8,9 +8,10 @@ const placeOrder = document.getElementById('place-order');
 placeOrder.addEventListener('click', () => {
     const cart = getCart();
     const cartString = JSON.stringify(cart, true, 2);
+    const total = calcOrderTotal(dirtbikes, cart);
+    const usdTotal = toUSD(total);
     if (cart.length){
-        alert(`Your order is: ${cartString}`);
-        localStorage.removeItem(cart);
+        alert(`Your order is: ${cartString} ORDER TOTAL: ${usdTotal}`);
         location.href = '../index.html';
         clearCart();
     } else {
