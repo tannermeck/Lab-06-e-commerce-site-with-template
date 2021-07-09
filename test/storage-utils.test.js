@@ -1,6 +1,6 @@
 const test = QUnit.test;
 
-import { CART, getCart, addItemToCart, setCart } from '../storage-utils.js';
+import { CART, getCart, addItemToCart } from '../storage-utils.js';
 
 test('get item from cart and return from local storage', (expect) => {
     const fakeCart = [
