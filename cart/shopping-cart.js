@@ -6,7 +6,18 @@ import { getCart, clearCart } from '../storage-utils.js';
 const tBody = document.getElementById('table-body');
 const placeOrder = document.getElementById('place-order');
 placeOrder.addEventListener('click', () => {
-    alert('Are you sure you want to purchase?');
+    const cart = getCart();
+    const cartString = JSON.stringify(cart, true, 2);
+    if (cart.length){
+        alert(`Your order is: ${cartString}`);
+        localStorage.removeItem(cart);
+        location.href = '../index.html';
+        clearCart();
+    } else {
+        placeOrder.disabled = true;
+        alert('Please Add Items To Place Order');
+    }
+    
 });
 
 function addCartProducts(){
