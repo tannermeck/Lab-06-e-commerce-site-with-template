@@ -31,7 +31,7 @@ test('renderLineItems returns a <tr> element', (expect) => {
     const ktm = {
         id: 1,
         name: 'Ktm',
-        image: 'Ktm.jpeg',
+        image: 'ktm.jpeg',
         description:'2021 ktm 450sxf',
         category: 'first-place',
         price: 10500
